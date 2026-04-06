@@ -2,8 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://py4wfg722kr2" path="res://player/player.tscn" id="1_53q0u"]
 [ext_resource type="PackedScene" uid="uid://bywp8skjddg1c" path="res://terrain/terrain.tscn" id="1_pjrb6"]
+[ext_resource type="PackedScene" uid="uid://c8h8nyw4hat7l" path="res://hud/hud.tscn" id="1_xwkvk"]
 
 [node name="Main" type="Node2D" unique_id=1480602809]
+
+[node name="HUD" parent="." unique_id=1682348127 instance=ExtResource("1_xwkvk")]
 
 [node name="Terrain" parent="." unique_id=1548449834 instance=ExtResource("1_pjrb6")]
 

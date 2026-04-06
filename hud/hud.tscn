@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://c8h8nyw4hat7l"]
+
+[ext_resource type="Script" uid="uid://juukr20c34d" path="res://hud/hud.gd" id="1_2gk58"]
+[ext_resource type="FontFile" uid="uid://bmsqud48s5l0g" path="res://fonts/PixelOperator8.ttf" id="1_6ca3a"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2gk58"]
+font = ExtResource("1_6ca3a")
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_6ca3a"]
+font = ExtResource("1_6ca3a")
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_318vg"]
+font = ExtResource("1_6ca3a")
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[node name="HUD" type="CanvasLayer" unique_id=1682348127]
+script = ExtResource("1_2gk58")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1021104749]
+offset_right = 120.0
+offset_bottom = 22.0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=874552723]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="CLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=595990527]
+layout_mode = 2
+text = "CoyoteTimer: 0.0"
+label_settings = SubResource("LabelSettings_2gk58")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=416909478]
+layout_mode = 2
+
+[node name="JLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=51670934]
+layout_mode = 2
+text = "JumpBufferTimer: 0.0"
+label_settings = SubResource("LabelSettings_6ca3a")
+
+[node name="QMLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=688457976]
+layout_mode = 2
+text = "Quended"
+label_settings = SubResource("LabelSettings_318vg")

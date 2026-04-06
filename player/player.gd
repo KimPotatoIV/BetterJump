@@ -32,8 +32,8 @@ var player_direction: PlayerDirection = PlayerDirection.RIGHT
 ##################################################
 """ 코요테 타임, 점프 버퍼 타임 상수 """
 # 이 수치를 조정하면 조작감을 극대화시킬 수 있음
-const COYOTE_TIME: float = 0.1
-const JUMP_BUFFER_TIME: float = 0.1
+const COYOTE_TIME: float = 0.5
+const JUMP_BUFFER_TIME: float = 0.5
 
 """ 코요테, 점프 버퍼 타이머 변수 """
 var coyote_timer: float = 0.0
@@ -82,7 +82,10 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, RUNNING_SPEED)
 		if is_on_floor():
 			player_state = PlayerState.IDLE
-
+	
+	GameManager.set_coyote(coyote_timer)
+	GameManager.set_jump_buffer(jump_buffer_timer)
+	
 	set_state(player_state, player_direction)
 	move_and_slide()
 
